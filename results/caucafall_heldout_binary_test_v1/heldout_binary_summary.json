@@ -1,0 +1,84 @@
+{
+  "protocol": {
+    "dataset": "CAUCAFall",
+    "split": "held-out source test (Subjects 2 and 10)",
+    "task": "binary frame-level non_fall/fall detector evaluation",
+    "training_performed": false,
+    "threshold_selected_on_test": false,
+    "fall_score_definition": "maximum confidence among class-1 detections; zero when no class-1 detection is returned at the inference floor"
+  },
+  "configuration": {
+    "model_path": "${PROJECT_ROOT}/experiments/yolo26n_baseline_seed42/weights/best.pt",
+    "model_sha256": "dc610e520ca9c81797b767bba0f734c488f9eaf3142fc291c7c890f01f54ec71",
+    "data_yaml": "${PROJECT_ROOT}/CAUCAFall_YOLO/data.yaml",
+    "data_yaml_sha256": "d9cfc87608c9dd5392be4132f14b0c153256effa2719af7a1503f27b6bb53d2d",
+    "image_root": "${PROJECT_ROOT}/CAUCAFall_YOLO/images/test",
+    "label_root": "${PROJECT_ROOT}/CAUCAFall_YOLO/labels/test",
+    "image_size": 640,
+    "batch_size": 32,
+    "workers": 4,
+    "device": 0,
+    "inference_confidence_floor": 0.001,
+    "nms_iou": 0.7,
+    "max_detections": 300,
+    "fall_threshold_locked_from_source_validation": 0.623
+  },
+  "environment": {
+    "python": "3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]",
+    "platform": "Linux-3.10.0-1160.6.1.el7.x86_64-x86_64-with-glibc2.28",
+    "torch": "2.1.0+cu121",
+    "cuda_available": true,
+    "cuda_version": "12.1",
+    "ultralytics": "8.4.57"
+  },
+  "frame_level_binary_metrics": {
+    "threshold": 0.623,
+    "samples": 3958,
+    "positive_samples": 1302,
+    "negative_samples": 2656,
+    "tp": 1244,
+    "fp": 32,
+    "tn": 2624,
+    "fn": 58,
+    "accuracy": 0.9772612430520465,
+    "positive_precision": 0.9749216300940439,
+    "positive_recall_sensitivity": 0.9554531490015361,
+    "specificity": 0.9879518072289156,
+    "positive_f1": 0.965089216446858,
+    "negative_f1": 0.9831397527163732,
+    "binary_macro_f1": 0.9741144845816156,
+    "balanced_accuracy": 0.9717024781152259,
+    "auroc": 0.9979584235559751,
+    "positive_auprc_average_precision": 0.9955119073301739,
+    "negative_auprc_average_precision": 0.9990690274448741,
+    "binary_macro_auprc": 0.997290467387524
+  },
+  "official_ultralytics_test_metrics": {
+    "status": "completed",
+    "save_dir": "${PROJECT_ROOT}/experiments/caucafall_heldout_binary_test_v1/official_yolo_test",
+    "results_dict": {
+      "metrics/precision(B)": 0.9689845951579369,
+      "metrics/recall(B)": 0.9688032082246034,
+      "metrics/mAP50(B)": 0.9906762292321196,
+      "metrics/mAP50-95(B)": 0.6927230357547883,
+      "fitness": 0.6927230357547883
+    },
+    "speed_ms_per_image": {
+      "preprocess": 0.7449135112756428,
+      "inference": 0.7775772501539935,
+      "loss": 0.00024350673457237731,
+      "postprocess": 0.083243794962312
+    },
+    "box_mp": 0.9689845951579369,
+    "box_mr": 0.9688032082246034,
+    "box_map50": 0.9906762292321196,
+    "box_map75": 0.8350266962088966,
+    "box_map": 0.6927230357547883,
+    "box_map50_95_by_class": "[    0.76676     0.61868]"
+  },
+  "outputs": {
+    "per_frame_predictions_csv": "${PROJECT_ROOT}/experiments/caucafall_heldout_binary_test_v1/per_frame_predictions.csv",
+    "summary_csv": "${PROJECT_ROOT}/experiments/caucafall_heldout_binary_test_v1/heldout_binary_summary.csv",
+    "precision_recall_curve_csv": "${PROJECT_ROOT}/experiments/caucafall_heldout_binary_test_v1/positive_precision_recall_curve.csv"
+  }
+}

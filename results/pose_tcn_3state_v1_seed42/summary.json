@@ -1,0 +1,119 @@
+{
+  "protocol": {
+    "model": "three-state causal Pose-TCN",
+    "states": [
+      "ADL",
+      "Falling",
+      "Fallen"
+    ],
+    "seed": 42,
+    "train_subjects": [
+      1,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "val_subjects": [
+      4,
+      5
+    ],
+    "test_used": false,
+    "early_stopping_metric": "validation macro one-vs-rest AUPRC",
+    "standardization": "train statistics only",
+    "window_length": 32,
+    "state_machine": {
+      "falling_required": 2,
+      "falling_lookback_frames": 20,
+      "arm_memory_frames": 30,
+      "fallen_consecutive_frames": 5,
+      "adl_reset_frames": 10
+    }
+  },
+  "environment": {
+    "python": "3.9.25",
+    "torch": "2.1.0+cu121",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "model_parameters": 147267,
+  "class_counts": [
+    1605,
+    203,
+    705
+  ],
+  "class_weights": [
+    0.5219106957424714,
+    4.126436781609195,
+    1.188179669030733
+  ],
+  "best_epoch": 4,
+  "best_validation_macro_auprc": 0.8886138974030343,
+  "validation_frame_metrics": {
+    "accuracy": 0.92,
+    "macro_f1": 0.829470903538119,
+    "weighted_f1": 0.9234987880797921,
+    "balanced_accuracy": 0.8474429550030607,
+    "macro_auprc_ovr": 0.8886138974030343,
+    "macro_auroc_ovr": 0.97382797289973,
+    "confusion_matrix": [
+      [
+        2027,
+        30,
+        0
+      ],
+      [
+        23,
+        206,
+        65
+      ],
+      [
+        13,
+        145,
+        941
+      ]
+    ],
+    "per_class": {
+      "ADL": {
+        "support": 2057,
+        "precision": 0.9825496849248667,
+        "recall": 0.9854156538648517,
+        "f1": 0.9839805825242718,
+        "auroc_ovr": 0.9978973274595773,
+        "auprc_ovr": 0.9987426153698868
+      },
+      "Falling": {
+        "support": 294,
+        "precision": 0.5406824146981627,
+        "recall": 0.7006802721088435,
+        "f1": 0.6103703703703703,
+        "auroc_ovr": 0.9387022236017347,
+        "auprc_ovr": 0.7162288491697536
+      },
+      "Fallen": {
+        "support": 1099,
+        "precision": 0.9353876739562624,
+        "recall": 0.8562329390354868,
+        "f1": 0.894061757719715,
+        "auroc_ovr": 0.9848843676378781,
+        "auprc_ovr": 0.9508702276694626
+      }
+    },
+    "loss": 0.2444494240367245
+  },
+  "validation_event_metrics": {
+    "fall_events": 10,
+    "detected_events": 9,
+    "missed_events": 1,
+    "event_recall": 0.9,
+    "false_alarm_count": 0,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 0.0,
+    "duplicate_alarms_after_onset": 0,
+    "mean_delay_frames": 35.111111111111114,
+    "median_delay_frames": 35.0,
+    "mean_delay_seconds": 1.7555555555555558,
+    "median_delay_seconds": 1.75
+  }
+}

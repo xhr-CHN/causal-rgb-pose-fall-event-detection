@@ -1,0 +1,23 @@
+{
+  "status": "locked_before_first_gmdcsa24_model_inference",
+  "created_utc": "2026-07-17T13:51:28.892973+00:00",
+  "locked_artifact_count": 12,
+  "locked_artifacts": {
+    "${PROJECT_ROOT}/yolo26n-pose.pt": "eb3bb8268828aeaf515cec23a4bfafd793944a86fe9af94ba7823609c14522a9",
+    "${PROJECT_ROOT}/experiments/quality_gated_logit_fusion_v3_w16_fixed_seed42/quality_gated_logit_fusion_v3_best.pt": "9af9a610d893fa0b1a53e6cba93706d35df61b4d909297ca174c08b3a9c7b152",
+    "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/alarm_verifier_v2_model.json": "f63661d59b5731355c81eec8c3c2f3f79fa9c1f1f7f214a0a6c833398d6ae11c",
+    "${PROJECT_ROOT}/experiments/causal_rescue_alarm_policy_v2/selected_policy.json": "0865b34814e0481ec0ba7b7894cf6493b9b4681279910e24b1f61239e7fd4de5",
+    "${PROJECT_ROOT}/extract_caucafall_pose_features_v1.py": "cebbdff0bc70760363dbed298156c2beac1123b48ba76008b39029694f1f23a8",
+    "${PROJECT_ROOT}/train_quality_gated_fusion_tcn.py": "533cb7252b032ccde4416e28b355283490deb9297e3326da8c6f9d3b34850d7c",
+    "${PROJECT_ROOT}/train_quality_gated_logit_fusion_v2.py": "baf5cfe9670bf5cbcb5c06913139b8a0cb4811631ab7d590658420dcf88ac796",
+    "${PROJECT_ROOT}/extract_gmdcsa24_frozen_features_v1.py": "115fbb80b7ec65bd821f6c6c83504a5c9c1a0bb821fe800b1328a3650d891e28",
+    "${PROJECT_ROOT}/run_gmdcsa24_frozen_inference_v1.py": "f3d07d6b2da9b7b88b2467c4953533929ea7e2b735624be677b724e09f7068fc",
+    "${PROJECT_ROOT}/GMDCSA24_FROZEN_INPUT_V1/blind_video_inventory.csv": "8f01b5add3bd7a465c0cfb0b0f31a912c4abf385e30b5ae78073152b0b2efe1b",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_lock_v1/locked_protocol.txt": "17594cce772d299a4755aaca48168b95578cfa77a0e57d6fc88277478b413f41",
+    "${PROJECT_ROOT}/lock_gmdcsa24_final_blind_protocol_v1.py": "bd2bc62d1b78af74f406ea63ab4ed8520cd90bea0df04cc5c47720913f675133"
+  },
+  "lock_file": "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_protocol_lock_v1/locked_artifacts_sha256.txt",
+  "lock_file_sha256": "a5ce4841235148de9da2543be6b35057e33952cd39dd8a505b5e94731c39cf44",
+  "locked_protocol": "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_protocol_lock_v1/locked_protocol.json",
+  "locked_protocol_sha256": "875e9a9d6f8eea31d456807cc50f50200e8632c63c8a9eafce4f1c47a1a2f728"
+}

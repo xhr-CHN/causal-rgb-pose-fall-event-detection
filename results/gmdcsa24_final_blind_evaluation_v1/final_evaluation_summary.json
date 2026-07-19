@@ -1,0 +1,140 @@
+{
+  "protocol": {
+    "dataset": "GMDCSA24 v2.1",
+    "role": "one-time frozen final blind evaluation",
+    "evaluation_run_after_frozen_output_hash_verification": true,
+    "model_threshold_or_policy_changed": false,
+    "event_positive_definition": "first accepted alarm whose actual decision timestamp is at or after official Fall onset",
+    "false_alarm_definition": "alarm in an ADL video or before official Fall onset",
+    "duplicate_definition": "additional accepted alarm after the first event detection in the same Fall video",
+    "negative_exposure_definition": "all actual ADL video duration plus pre-onset duration of Fall videos",
+    "base_candidate_diagnostic_timestamp": "sample_timestamp_ms",
+    "primary_and_final_alarm_timestamp": "decision_timestamp_ms",
+    "frame_metric_scope": "available W16 causal windows only"
+  },
+  "created_utc": "2026-07-17T14:50:58.256844+00:00",
+  "dataset": {
+    "sequences": 160,
+    "fall_videos": 79,
+    "adl_videos": 81,
+    "subjects": 4,
+    "fall_type_counts": {
+      "BW": 26,
+      "BW+SW": 1,
+      "FW": 23,
+      "SW": 28,
+      "UNSPECIFIED": 1
+    },
+    "fall_interval_source_counts": {
+      "official_explicit_interval": 77,
+      "repaired_complement_after_last_nonfall_interval": 1,
+      "repaired_missing_to_separator": 1
+    }
+  },
+  "frame_level": {
+    "tp": 4304,
+    "fp": 2493,
+    "tn": 14663,
+    "fn": 1850,
+    "accuracy": 0.8136851136851136,
+    "precision": 0.6332205384728556,
+    "recall_sensitivity": 0.699382515437114,
+    "specificity": 0.8546864070878992,
+    "f1": 0.6646590996834222,
+    "balanced_accuracy": 0.7770344612625066,
+    "evaluation_scope": "available W16 causal windows only",
+    "positive_definition": "official Fall interval",
+    "prediction_definition": "argmax state is Falling or Fallen",
+    "windows": 23310,
+    "positive_windows": 6154,
+    "negative_windows": 17156,
+    "auroc": 0.8298221133594998,
+    "auprc_average_precision": 0.640344152600172,
+    "brier_score": 0.17444064259369751,
+    "ece_10_bins": 0.16679845108294625
+  },
+  "event_level": {
+    "base_candidate": {
+      "stage": "base_candidate",
+      "alarm_timestamp_definition": "sample_timestamp_ms",
+      "total_alarm_rows": 110,
+      "total_fall_events": 79,
+      "detected_fall_events": 73,
+      "missed_fall_events": 6,
+      "event_recall": 0.9240506329113924,
+      "false_alarm_count": 36,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 137.10482107363308,
+      "duplicate_alarms_after_event_detection": 1,
+      "event_alarm_precision_excluding_duplicates": 0.6697247706422018,
+      "mean_detection_delay_ms": 1138.3561643835617,
+      "median_detection_delay_ms": 1050.0,
+      "p95_detection_delay_ms": 1879.9999999999982
+    },
+    "primary_verifier": {
+      "stage": "primary_verifier",
+      "alarm_timestamp_definition": "decision_timestamp_ms",
+      "total_alarm_rows": 68,
+      "total_fall_events": 79,
+      "detected_fall_events": 56,
+      "missed_fall_events": 23,
+      "event_recall": 0.7088607594936709,
+      "false_alarm_count": 12,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 45.70160702454436,
+      "duplicate_alarms_after_event_detection": 0,
+      "event_alarm_precision_excluding_duplicates": 0.8235294117647058,
+      "mean_detection_delay_ms": 1283.0357142857142,
+      "median_detection_delay_ms": 1250.0,
+      "p95_detection_delay_ms": 1912.5
+    },
+    "final_causal_rescue": {
+      "stage": "final_causal_rescue",
+      "alarm_timestamp_definition": "decision_timestamp_ms",
+      "total_alarm_rows": 74,
+      "total_fall_events": 79,
+      "detected_fall_events": 60,
+      "missed_fall_events": 19,
+      "event_recall": 0.759493670886076,
+      "false_alarm_count": 14,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 53.31854152863509,
+      "duplicate_alarms_after_event_detection": 0,
+      "event_alarm_precision_excluding_duplicates": 0.8108108108108109,
+      "mean_detection_delay_ms": 1305.0,
+      "median_detection_delay_ms": 1250.0,
+      "p95_detection_delay_ms": 1950.0
+    }
+  },
+  "rescue_effect": {
+    "rescued_alarm_rows": 6,
+    "additional_detected_events": 4,
+    "additional_false_alarms": 2
+  },
+  "frozen_inference_sha256_verified": {
+    "${PROJECT_ROOT}/experiments/gmdcsa24_frozen_inference_v1/frame_predictions.csv": "14127bcc02306fbdd4269d7e1f9ef45624e92fe4470d9aaacd77893c732394ec",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_frozen_inference_v1/candidate_alarms.csv": "3aad362194960215d3e91a402bae6ef7af155871ba3783d5bd951f824d2a31ad",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_frozen_inference_v1/final_alarms.csv": "5c0ea1a8d220d9cd68d70dcc892c104a7cf0a11ea3d0b7a07f67259d7278cbc2",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_frozen_inference_v1/resampling_summary.csv": "49e97cc60181b8ab639185a46f3a81ffcee0adfd01f98bacd166efb6fb403e24",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_frozen_inference_v1/inference_summary.json": "d05b300672076373c700b93b27f59b6f3c573195b117e071aacd006003fca678"
+  },
+  "revealed_label_artifact_sha256": {
+    "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_lock_v1/PRIVATE_EVALUATION_MAPPING_DO_NOT_USE_FOR_INFERENCE.csv": "13a91220a5b3b4db9417df28bb46addbe5208478295e270306a06877f9f1d1a0",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 1/ADL.csv": "9899703edb31776c5b837449f1a9c0efd9f1d84369f0b1443b63253abc38e3a2",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 1/Fall.csv": "28e55e3fd60f791f02c821e91c2a64362a1dabdbd46a916279655eab83a49754",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 2/ADL.csv": "c83c19c116e14d82f644040dc07bb14474486c501cb760275a7397837798ea04",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 2/Fall.csv": "b6829461084e99183014ac72447ebd6879038e1093a23054f396de4426fbde60",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 3/ADL.csv": "e98afe16fb80677a06b7dd19769611cfed13e59eb0f85a7668ae22baf15bc3c2",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 3/Fall.csv": "02a9a5f5c5f0b178510f6e512cf200b8f8a626ecea5c61a1e713046d73046470",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 4/ADL.csv": "9b9a4aef43725126d8f8d9cf04a393ba98dfea9f30554e6391cc0584ea661c2d",
+    "${PROJECT_ROOT}/GMDCSA24/Subject 4/Fall.csv": "d8cbc7f404dcf0cf674f18fa4c963a382aa64e7c93f2053194915bd0bdb5b4e5"
+  },
+  "evaluation_script_sha256": "fa53a21ac5a332647b805998ecab28cf41f56c1c941574da0448635700ee4a6b",
+  "output_sha256": {
+    "annotation_audit.csv": "869eed27a8207ee4b0ed1f8faf888592e68d93997a8747c3fcf0669ca6b24387",
+    "frame_predictions_with_ground_truth.csv": "a6192dd14603662662a573efe94c4274cbcc6aabd1884c4f1bc624c0f8432c0b",
+    "alarm_classification.csv": "2e7c83db41808afda923f1361e2fd03cd1c1a609180c22352caac60f6eb6eddc",
+    "event_results.csv": "8c60ed8659ed97f36e0491daf96b6bd14b5cbcede8ecca00bc1a5c8cbdad3bc3",
+    "subgroup_metrics.csv": "b1ccdcf299508db2046ad7de6bfdb36104a7ac47917e7379a85e5f81aed59392"
+  }
+}

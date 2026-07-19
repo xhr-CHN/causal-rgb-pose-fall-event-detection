@@ -1,0 +1,11 @@
+final_blind_dataset=Le2i
+window_length=16
+evidence_alpha=0.5
+evidence_threshold=0.85
+evidence_consecutive_frames=2
+reset_threshold=0.10
+reset_consecutive_frames=5
+verifier_history_frames=20
+verifier_short_history=left_pad_earliest
+verifier_threshold=0.5455114656448155
+future_frames_used=0

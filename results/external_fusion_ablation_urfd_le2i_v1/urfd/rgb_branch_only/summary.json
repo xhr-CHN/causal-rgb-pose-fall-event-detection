@@ -1,0 +1,63 @@
+{
+  "dataset": "URFD",
+  "variant": "rgb_branch_only",
+  "variant_definition": "RGB auxiliary branch of the jointly trained gated checkpoint",
+  "protocol": {
+    "post_hoc_frozen_external_ablation": true,
+    "retraining": false,
+    "external_threshold_tuning": false,
+    "candidate_stage_only": true,
+    "verifier_or_rescue_applied": false,
+    "window_endpoint_fps": 20.0,
+    "locked_source_policy": {
+      "alpha": 0.5,
+      "alarm_threshold": 0.85,
+      "consecutive_evidence_frames": 2,
+      "reset_threshold": 0.1,
+      "reset_frames": 5
+    }
+  },
+  "binary_frame_level": {
+    "evaluation_unit": "20-FPS causal-window endpoint",
+    "positive_definition": "Falling or Fallen / official fall interval",
+    "samples": 6930,
+    "positive_samples": 1138,
+    "negative_samples": 5792,
+    "tp": 576,
+    "fp": 1433,
+    "tn": 4359,
+    "fn": 562,
+    "accuracy": 0.7121212121212122,
+    "positive_precision": 0.2867098058735689,
+    "positive_recall_sensitivity": 0.5061511423550088,
+    "specificity": 0.7525897790055248,
+    "positive_f1": 0.3660629170638703,
+    "negative_f1": 0.8137776533183981,
+    "binary_macro_f1": 0.5899202851911343,
+    "balanced_accuracy": 0.6293704606802668,
+    "auroc": 0.6120714348134266,
+    "positive_auprc_average_precision": 0.33628668736237755,
+    "negative_auprc_average_precision": 0.845302139755456,
+    "binary_macro_auprc": 0.5907944135589167,
+    "brier_score": 0.2686282581814784,
+    "ece_10_bins": 0.26952119487973664
+  },
+  "event_level_locked_candidate_policy": {
+    "candidate_stage_only": true,
+    "total_fall_events": 30,
+    "detected_fall_events": 28,
+    "missed_fall_events": 2,
+    "event_recall": 0.9333333333333333,
+    "candidate_alarm_count": 52,
+    "false_alarm_count": 24,
+    "negative_exposure_hours": 0.08044444444444446,
+    "false_alarms_per_hour": 298.34254143646405,
+    "duplicate_alarms_after_onset": 0,
+    "mean_detection_delay_ms": 1235.892857142857,
+    "median_detection_delay_ms": 1218.0,
+    "p95_detection_delay_ms": 1511.55,
+    "mean_detection_delay_s": 1.2358928571428571,
+    "median_detection_delay_s": 1.218,
+    "p95_detection_delay_s": 1.51155
+  }
+}

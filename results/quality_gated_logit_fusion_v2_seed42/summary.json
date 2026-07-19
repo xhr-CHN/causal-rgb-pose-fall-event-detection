@@ -1,0 +1,246 @@
+{
+  "protocol": {
+    "model": "reliability-gated late-logit RGB/Pose causal TCN V2",
+    "source_dataset": "CAUCAFall",
+    "test_used": false,
+    "external_data_used": false,
+    "seed": 42,
+    "window_length": 32,
+    "pose_features": 95,
+    "rgb_features": 256,
+    "quality_features": [
+      "pose_found",
+      "person_conf",
+      "visible_keypoint_ratio",
+      "mean_keypoint_conf",
+      "torso_keypoint_conf"
+    ],
+    "state_machine": {
+      "falling_required": 2,
+      "falling_lookback_frames": 20,
+      "arm_memory_frames": 30,
+      "fallen_consecutive_frames": 5,
+      "adl_reset_frames": 10
+    }
+  },
+  "training_corruption": {
+    "clean_probability": 0.5,
+    "pose_corruption_probability": 0.25,
+    "rgb_corruption_probability": 0.25,
+    "gate_supervision": "Pose bad -> weight 0; RGB bad -> weight 1"
+  },
+  "model_selection": {
+    "clean_macro_auprc_weight": 0.5,
+    "pose_missing_macro_auprc_weight": 0.25,
+    "rgb_missing_macro_auprc_weight": 0.25
+  },
+  "environment": {
+    "python": "3.9.25",
+    "torch": "2.1.0+cu121",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "model_parameters": 174119,
+  "class_counts": [
+    1605,
+    203,
+    705
+  ],
+  "class_weights": [
+    0.5219106957424714,
+    4.126436781609195,
+    1.188179669030733
+  ],
+  "best_epoch": 49,
+  "best_selection_score": 0.8700147342577836,
+  "clean_validation_frame_metrics": {
+    "accuracy": 0.9069565217391304,
+    "macro_f1": 0.7727533400661907,
+    "weighted_f1": 0.8946026908331316,
+    "balanced_accuracy": 0.7398815889641287,
+    "macro_auprc_ovr": 0.8645699140964642,
+    "macro_auroc_ovr": 0.9630351206000194,
+    "confusion_matrix": [
+      [
+        2051,
+        5,
+        1
+      ],
+      [
+        67,
+        97,
+        130
+      ],
+      [
+        103,
+        15,
+        981
+      ]
+    ],
+    "per_class": {
+      "ADL": {
+        "support": 2057,
+        "precision": 0.9234579018460153,
+        "recall": 0.9970831307729704,
+        "f1": 0.9588592800374006,
+        "auprc_ovr": 0.9940125174716908,
+        "auroc_ovr": 0.9921967291838036
+      },
+      "Falling": {
+        "support": 294,
+        "precision": 0.8290598290598291,
+        "recall": 0.3299319727891156,
+        "f1": 0.4720194647201947,
+        "auprc_ovr": 0.6538354639863242,
+        "auroc_ovr": 0.9231557642068234
+      },
+      "Fallen": {
+        "support": 1099,
+        "precision": 0.8821942446043165,
+        "recall": 0.8926296633303002,
+        "f1": 0.8873812754409769,
+        "auprc_ovr": 0.9458617608313776,
+        "auroc_ovr": 0.9737528684094314
+      }
+    },
+    "loss": 1.0705302510024395,
+    "mean_pose_weight": 0.9976485967636108,
+    "std_pose_weight": 0.0036117963027209044,
+    "minimum_pose_weight": 0.9579382538795471,
+    "maximum_pose_weight": 0.9999982118606567,
+    "mean_branch_disagreement": 0.04678930714726448
+  },
+  "pose_missing_validation_frame_metrics": {
+    "accuracy": 0.9188405797101449,
+    "macro_f1": 0.8432402196115382,
+    "weighted_f1": 0.9169396233023309,
+    "balanced_accuracy": 0.8308573030026173,
+    "macro_auprc_ovr": 0.8870847160183283,
+    "macro_auroc_ovr": 0.9632454879930131,
+    "confusion_matrix": [
+      [
+        2030,
+        27,
+        0
+      ],
+      [
+        22,
+        188,
+        84
+      ],
+      [
+        97,
+        50,
+        952
+      ]
+    ],
+    "per_class": {
+      "ADL": {
+        "support": 2057,
+        "precision": 0.9446254071661238,
+        "recall": 0.9868740884783666,
+        "f1": 0.9652876842605801,
+        "auprc_ovr": 0.9875641846937736,
+        "auroc_ovr": 0.9838977162358776
+      },
+      "Falling": {
+        "support": 294,
+        "precision": 0.7094339622641509,
+        "recall": 0.6394557823129252,
+        "f1": 0.6726296958855098,
+        "auprc_ovr": 0.7355318710086192,
+        "auroc_ovr": 0.951201900278489
+      },
+      "Fallen": {
+        "support": 1099,
+        "precision": 0.918918918918919,
+        "recall": 0.8662420382165605,
+        "f1": 0.8918032786885246,
+        "auprc_ovr": 0.938158092352592,
+        "auroc_ovr": 0.9546368474646725
+      }
+    },
+    "loss": 0.5862420138450124,
+    "mean_pose_weight": 0.0009676822228357196,
+    "std_pose_weight": 0.0024322359822690487,
+    "minimum_pose_weight": 0.0004950336297042668,
+    "maximum_pose_weight": 0.04365880787372589,
+    "mean_branch_disagreement": 0.5844956636428833
+  },
+  "rgb_missing_validation_frame_metrics": {
+    "accuracy": 0.9060869565217391,
+    "macro_f1": 0.7686074851838361,
+    "weighted_f1": 0.8932622308341792,
+    "balanced_accuracy": 0.7364802284199111,
+    "macro_auprc_ovr": 0.8638343928198776,
+    "macro_auroc_ovr": 0.9629398949719681,
+    "confusion_matrix": [
+      [
+        2051,
+        5,
+        1
+      ],
+      [
+        67,
+        94,
+        133
+      ],
+      [
+        103,
+        15,
+        981
+      ]
+    ],
+    "per_class": {
+      "ADL": {
+        "support": 2057,
+        "precision": 0.9234579018460153,
+        "recall": 0.9970831307729704,
+        "f1": 0.9588592800374006,
+        "auprc_ovr": 0.9939880978173085,
+        "auroc_ovr": 0.9921627025327345
+      },
+      "Falling": {
+        "support": 294,
+        "precision": 0.8245614035087719,
+        "recall": 0.3197278911564626,
+        "f1": 0.4607843137254902,
+        "auprc_ovr": 0.6517273218081107,
+        "auroc_ovr": 0.9229315934231741
+      },
+      "Fallen": {
+        "support": 1099,
+        "precision": 0.8798206278026905,
+        "recall": 0.8926296633303002,
+        "f1": 0.8861788617886179,
+        "auprc_ovr": 0.9457877588342137,
+        "auroc_ovr": 0.9737253889599957
+      }
+    },
+    "loss": 1.074087861100426,
+    "mean_pose_weight": 0.9999692440032959,
+    "std_pose_weight": 6.0304937505861744e-05,
+    "minimum_pose_weight": 0.9990596175193787,
+    "maximum_pose_weight": 0.9999947547912598,
+    "mean_branch_disagreement": 0.5585923790931702
+  },
+  "gate_response": {
+    "clean_mean_pose_weight": 0.9976485967636108,
+    "pose_missing_mean_pose_weight": 0.0009676822228357196,
+    "rgb_missing_mean_pose_weight": 0.9999692440032959,
+    "pose_missing_weight_drop": 0.9966809145407751,
+    "rgb_missing_weight_increase": 0.0023206472396850586,
+    "ordered_response": true
+  },
+  "clean_validation_event_metrics": {
+    "fall_events": 10,
+    "detected_events": 9,
+    "missed_events": 1,
+    "event_recall": 0.9,
+    "false_alarm_count": 0,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 0.0,
+    "mean_delay_seconds": 1.25,
+    "median_delay_seconds": 1.25
+  }
+}

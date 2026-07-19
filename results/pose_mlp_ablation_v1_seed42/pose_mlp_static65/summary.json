@@ -1,0 +1,77 @@
+{
+  "protocol": {
+    "model": "pose_mlp_static65",
+    "description": "single current frame: pose, bbox and quality features",
+    "seed": 42,
+    "train_subjects": [
+      1,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "val_subjects": [
+      4,
+      5
+    ],
+    "test_used": false,
+    "early_stopping_metric": "validation AUPRC",
+    "threshold_selection": "maximum validation frame-level F1",
+    "standardization": "train target-frame statistics only",
+    "alarm_consecutive_frames": 5
+  },
+  "environment": {
+    "python": "3.9.25",
+    "torch": "2.1.0+cu121",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "model_parameters": 50818,
+  "best_epoch": 3,
+  "best_validation_auprc_during_training": 0.9935909363391738,
+  "selected_threshold": 0.107,
+  "validation_metrics_at_0.5": {
+    "tp": 1244,
+    "fp": 24,
+    "tn": 2033,
+    "fn": 149,
+    "accuracy": 0.9498550724637681,
+    "precision": 0.9810725552050473,
+    "recall_sensitivity": 0.8930366116295765,
+    "specificity": 0.9883325230918814,
+    "f1": 0.9349868470499813,
+    "balanced_accuracy": 0.9406845673607289,
+    "loss": 0.11618122809984978,
+    "auroc": 0.9952750068838533,
+    "auprc": 0.9935909363391738
+  },
+  "validation_metrics_at_selected_threshold": {
+    "tp": 1371,
+    "fp": 75,
+    "tn": 1982,
+    "fn": 22,
+    "accuracy": 0.9718840579710145,
+    "precision": 0.9481327800829875,
+    "recall_sensitivity": 0.9842067480258435,
+    "specificity": 0.9635391346621293,
+    "f1": 0.9658330398027474,
+    "balanced_accuracy": 0.9738729413439864,
+    "auroc": 0.9952750068838533,
+    "auprc": 0.9935909363391738
+  },
+  "validation_event_metrics": {
+    "fall_events": 10,
+    "detected_events": 6,
+    "missed_events": 4,
+    "event_recall": 0.6,
+    "false_alarm_count": 5,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 175.0121536217793,
+    "duplicate_alarms_after_onset": 1,
+    "mean_delay_frames": 7.5,
+    "median_delay_frames": 8.0,
+    "mean_delay_seconds": 0.375,
+    "median_delay_seconds": 0.4
+  }
+}

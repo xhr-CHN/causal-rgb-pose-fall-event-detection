@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article."
+title: "Causal RGB-Pose Fall-Event Detection"
+type: software
+authors:
+  - family-names: Xiao
+    given-names: Haoran
+  - family-names: Li
+    given-names: Zehao
+  - family-names: Liu
+    given-names: Peishun
+version: 1.0.0
+date-released: 2026-07-18
+license: AGPL-3.0-only
+

@@ -1,0 +1,79 @@
+{
+  "protocol": {
+    "model": "pose_gru32",
+    "cell_type": "GRU",
+    "seed": 42,
+    "train_subjects": [
+      1,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "val_subjects": [
+      4,
+      5
+    ],
+    "test_used": false,
+    "window_length": 32,
+    "early_stopping_metric": "validation AUPRC",
+    "threshold_selection": "maximum validation frame-level F1",
+    "standardization": "train statistics only across windows and time",
+    "alarm_consecutive_frames": 5,
+    "caucafall_fps": 20.0
+  },
+  "environment": {
+    "python": "3.9.25",
+    "torch": "2.1.0+cu121",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "model_parameters": 189058,
+  "best_epoch": 9,
+  "best_validation_auprc_during_training": 0.9972511749540007,
+  "selected_threshold": 0.078,
+  "validation_metrics_at_0.5": {
+    "tp": 1269,
+    "fp": 12,
+    "tn": 2045,
+    "fn": 124,
+    "accuracy": 0.9605797101449275,
+    "precision": 0.990632318501171,
+    "recall_sensitivity": 0.9109834888729361,
+    "specificity": 0.9941662615459407,
+    "f1": 0.9491398653702318,
+    "balanced_accuracy": 0.9525748752094384,
+    "loss": 0.10763288781365744,
+    "auroc": 0.9980617023585878,
+    "auprc": 0.9972511749540007
+  },
+  "validation_metrics_at_selected_threshold": {
+    "tp": 1363,
+    "fp": 26,
+    "tn": 2031,
+    "fn": 30,
+    "accuracy": 0.983768115942029,
+    "precision": 0.9812814974802015,
+    "recall_sensitivity": 0.9784637473079684,
+    "specificity": 0.9873602333495382,
+    "f1": 0.9798705966930266,
+    "balanced_accuracy": 0.9829119903287533,
+    "auroc": 0.9980617023585878,
+    "auprc": 0.9972511749540007
+  },
+  "validation_event_metrics": {
+    "fall_events": 10,
+    "detected_events": 9,
+    "missed_events": 1,
+    "event_recall": 0.9,
+    "false_alarm_count": 1,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 35.00243072435586,
+    "duplicate_alarms_after_onset": 0,
+    "mean_delay_frames": 7.222222222222222,
+    "median_delay_frames": 4.0,
+    "mean_delay_seconds": 0.3611111111111111,
+    "median_delay_seconds": 0.2
+  }
+}

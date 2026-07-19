@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+data/
+features/
+*.npy
+*.npz
+*.mp4
+*.avi
+*.mkv
+*.rar
+*.zip

@@ -1,0 +1,51 @@
+{
+  "protocol_name": "gmdcsa24_final_blind_protocol_v1",
+  "dataset": "GMDCSA24 v2.1 anonymous input",
+  "dataset_role": "single untouched final blind test",
+  "created_utc": "2026-07-17T13:51:28.892973+00:00",
+  "pre_lock_gmdcsa24_model_inference": false,
+  "training_or_tuning_on_gmdcsa24": false,
+  "inference_visible_labels_or_subjects": false,
+  "development_datasets": [
+    "CAUCAFall",
+    "URFD Camera 0 RGB",
+    "Le2i"
+  ],
+  "frozen_method": {
+    "pose_extractor": "YOLO26n-Pose",
+    "temporal_fusion": "quality-gated RGB/Pose causal TCN",
+    "resampled_fps": 20.0,
+    "window_length": 16,
+    "base_evidence": {
+      "alpha": 0.5,
+      "threshold": 0.85,
+      "consecutive_frames": 2,
+      "reset_threshold": 0.1,
+      "reset_frames": 5
+    },
+    "primary_verifier_threshold": 0.3179642728137935,
+    "confirmation_future_samples": 4,
+    "maximum_added_delay_ms": 200.0,
+    "causal_rescue": {
+      "pre_pose_fall_score_slope_minimum": 0.05,
+      "confirm_prob_falling_delta_minimum": 0.0
+    }
+  },
+  "required_execution_order": [
+    "extract_gmdcsa24_frozen_features_v1.py",
+    "run_gmdcsa24_frozen_inference_v1.py",
+    "record output SHA-256 values",
+    "only then open private mapping and evaluate"
+  ],
+  "post_inference_rule": "No model, threshold, rescue rule, or preprocessing change after seeing GMDCSA24 results may be reported as the frozen result.",
+  "inventory_audit": {
+    "sequences": 160,
+    "inventory_fields": [
+      "sequence_id",
+      "video_file",
+      "sha256"
+    ],
+    "opaque_sequence_ids": true,
+    "label_or_subject_fields_present": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "protocol": {
+    "selection_dataset": "CAUCAFall validation only",
+    "external_data_used_for_selection": false,
+    "window_length": 16,
+    "score": "P(Falling) + P(Fallen)",
+    "evidence_update": "E_t = alpha*E_(t-1) + (1-alpha)*fall_score"
+  },
+  "selected_policy": {
+    "alpha": 0.5,
+    "alarm_threshold": 0.85,
+    "consecutive_evidence_frames": 2,
+    "reset_threshold": 0.1,
+    "reset_frames": 5
+  },
+  "source_validation_result": {
+    "detected_events": 9,
+    "total_events": 10,
+    "event_recall": 0.9,
+    "false_alarm_count": 0,
+    "mean_delay_frames": 5.888888888888889,
+    "mean_delay_seconds": 0.29444444444444445
+  },
+  "original_state_machine_result": {
+    "fall_events": 10,
+    "detected_events": 9,
+    "missed_events": 1,
+    "event_recall": 0.9,
+    "false_alarm_count": 0,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 0.0,
+    "mean_delay_seconds": 1.1444444444444444,
+    "median_delay_seconds": 1.1
+  }
+}

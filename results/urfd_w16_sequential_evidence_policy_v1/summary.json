@@ -1,0 +1,45 @@
+{
+  "protocol": {
+    "source_training_dataset": "CAUCAFall",
+    "external_development_dataset": "URFD Camera 0 RGB",
+    "window_length": 16,
+    "fine_tuning": false,
+    "policy_selection_dataset": "CAUCAFall validation only",
+    "urfd_used_for_policy_selection": false,
+    "score": "P(Falling) + P(Fallen)",
+    "policy_parameters_locked": true
+  },
+  "locked_policy": {
+    "alpha": 0.5,
+    "alarm_threshold": 0.85,
+    "consecutive_evidence_frames": 2,
+    "reset_threshold": 0.1,
+    "reset_frames": 5
+  },
+  "event_level_sequential_evidence": {
+    "total_fall_events": 30,
+    "detected_fall_events": 28,
+    "missed_fall_events": 2,
+    "event_recall": 0.9333333333333333,
+    "false_alarm_count": 26,
+    "negative_exposure_hours": 0.08044444444444446,
+    "false_alarms_per_hour": 323.20441988950273,
+    "duplicate_alarms_after_onset": 0,
+    "mean_detection_delay_ms": 1278.75,
+    "median_detection_delay_ms": 1237.0,
+    "p95_detection_delay_ms": 1490.1
+  },
+  "original_locked_state_machine": {
+    "total_fall_events": 30,
+    "detected_fall_events": 10,
+    "missed_fall_events": 20,
+    "event_recall": 0.3333333333333333,
+    "false_alarm_count": 7,
+    "negative_exposure_hours": 0.08044444444444446,
+    "false_alarms_per_hour": 87.01657458563534,
+    "duplicate_alarms_after_onset": 0,
+    "mean_detection_delay_ms": 1984.0,
+    "median_detection_delay_ms": 2062.0,
+    "p95_detection_delay_ms": 2220.7
+  }
+}

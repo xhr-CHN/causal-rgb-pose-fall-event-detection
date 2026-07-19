@@ -1,0 +1,208 @@
+{
+  "protocol": {
+    "dataset": "GMDCSA24 v2.1",
+    "role": "post-hoc statistics on frozen one-time blind evaluation",
+    "model_or_policy_changed": false,
+    "predictions_changed": false,
+    "bootstrap_unit": "complete video sequence",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260718,
+    "confidence_level": 0.95
+  },
+  "created_utc": "2026-07-18T01:28:16.670573+00:00",
+  "stage_intervals": {
+    "base_candidate": {
+      "fall_events": 79,
+      "detected_events": 73,
+      "event_recall": 0.9240506329113924,
+      "event_recall_wilson_95ci": [
+        0.8440458309717235,
+        0.9647279515496333
+      ],
+      "false_alarm_count": 36,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 137.10482107363308,
+      "false_alarms_per_hour_exact_poisson_95ci": [
+        96.02653111831135,
+        189.8108639112307
+      ],
+      "event_alarm_precision_excluding_duplicates": 0.6697247706422018,
+      "event_alarm_precision_wilson_95ci": [
+        0.5769786271265971,
+        0.7509150423339623
+      ],
+      "duplicate_alarms": 1,
+      "delay_bootstrap": {
+        "mean_ms": 1138.3561643835617,
+        "mean_95ci_ms": [
+          1042.4657534246576,
+          1239.7260273972602
+        ],
+        "median_ms": 1050.0,
+        "median_95ci_ms": [
+          1000.0,
+          1150.0
+        ]
+      }
+    },
+    "primary_verifier": {
+      "fall_events": 79,
+      "detected_events": 56,
+      "event_recall": 0.7088607594936709,
+      "event_recall_wilson_95ci": [
+        0.6008711991561764,
+        0.7974800668618054
+      ],
+      "false_alarm_count": 12,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 45.70160702454436,
+      "false_alarms_per_hour_exact_poisson_95ci": [
+        23.61468724541618,
+        79.83151020694567
+      ],
+      "event_alarm_precision_excluding_duplicates": 0.8235294117647058,
+      "event_alarm_precision_wilson_95ci": [
+        0.7163955959225665,
+        0.8960641275056231
+      ],
+      "duplicate_alarms": 0,
+      "delay_bootstrap": {
+        "mean_ms": 1283.0357142857142,
+        "mean_95ci_ms": [
+          1203.5714285714287,
+          1366.9642857142858
+        ],
+        "median_ms": 1250.0,
+        "median_95ci_ms": [
+          1200.0,
+          1350.0
+        ]
+      }
+    },
+    "final_causal_rescue": {
+      "fall_events": 79,
+      "detected_events": 60,
+      "event_recall": 0.759493670886076,
+      "event_recall_wilson_95ci": [
+        0.6546430708772921,
+        0.8402781990238368
+      ],
+      "false_alarm_count": 14,
+      "negative_exposure_hours": 0.26257282361111106,
+      "false_alarms_per_hour": 53.31854152863509,
+      "false_alarms_per_hour_exact_poisson_95ci": [
+        29.149742806729325,
+        89.45945280546385
+      ],
+      "event_alarm_precision_excluding_duplicates": 0.8108108108108109,
+      "event_alarm_precision_wilson_95ci": [
+        0.7071244273939165,
+        0.8838203043326546
+      ],
+      "duplicate_alarms": 0,
+      "delay_bootstrap": {
+        "mean_ms": 1305.0,
+        "mean_95ci_ms": [
+          1220.0,
+          1397.5
+        ],
+        "median_ms": 1250.0,
+        "median_95ci_ms": [
+          1200.0,
+          1350.0
+        ]
+      }
+    }
+  },
+  "paired_comparisons": {
+    "base_candidate_vs_primary_verifier": {
+      "reference": "base_candidate",
+      "target": "primary_verifier",
+      "paired_event_detection": {
+        "both_detected": 56,
+        "reference_only_detected": 17,
+        "target_only_detected": 0,
+        "neither_detected": 6,
+        "event_recall_difference_target_minus_reference": -0.21518987341772153,
+        "event_recall_difference_bootstrap_95ci": [
+          -0.31645569620253167,
+          -0.12658227848101267
+        ],
+        "exact_mcnemar_p": 1.52587890625e-05
+      },
+      "paired_false_alarm_counts": {
+        "reference_false_alarms": 36,
+        "target_false_alarms": 12,
+        "total_difference_target_minus_reference": -24,
+        "total_difference_bootstrap_95ci": [
+          -35.0,
+          -15.0
+        ],
+        "sequences_with_fewer_false_alarms_in_target": 21,
+        "sequences_with_more_false_alarms_in_target": 0,
+        "exact_sign_test_p": 9.5367431640625e-07
+      }
+    },
+    "base_candidate_vs_final_causal_rescue": {
+      "reference": "base_candidate",
+      "target": "final_causal_rescue",
+      "paired_event_detection": {
+        "both_detected": 60,
+        "reference_only_detected": 13,
+        "target_only_detected": 0,
+        "neither_detected": 6,
+        "event_recall_difference_target_minus_reference": -0.16455696202531644,
+        "event_recall_difference_bootstrap_95ci": [
+          -0.25316455696202533,
+          -0.08860759493670886
+        ],
+        "exact_mcnemar_p": 0.000244140625
+      },
+      "paired_false_alarm_counts": {
+        "reference_false_alarms": 36,
+        "target_false_alarms": 14,
+        "total_difference_target_minus_reference": -22,
+        "total_difference_bootstrap_95ci": [
+          -31.0,
+          -14.0
+        ],
+        "sequences_with_fewer_false_alarms_in_target": 21,
+        "sequences_with_more_false_alarms_in_target": 0,
+        "exact_sign_test_p": 9.5367431640625e-07
+      }
+    },
+    "primary_verifier_vs_final_causal_rescue": {
+      "reference": "primary_verifier",
+      "target": "final_causal_rescue",
+      "paired_event_detection": {
+        "both_detected": 56,
+        "reference_only_detected": 0,
+        "target_only_detected": 4,
+        "neither_detected": 19,
+        "event_recall_difference_target_minus_reference": 0.05063291139240506,
+        "event_recall_difference_bootstrap_95ci": [
+          0.012658227848101266,
+          0.10126582278481013
+        ],
+        "exact_mcnemar_p": 0.125
+      },
+      "paired_false_alarm_counts": {
+        "reference_false_alarms": 12,
+        "target_false_alarms": 14,
+        "total_difference_target_minus_reference": 2,
+        "total_difference_bootstrap_95ci": [
+          0.0,
+          5.0
+        ],
+        "sequences_with_fewer_false_alarms_in_target": 0,
+        "sequences_with_more_false_alarms_in_target": 2,
+        "exact_sign_test_p": 0.5
+      }
+    }
+  },
+  "input_sha256": {
+    "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_evaluation_v1/event_results.csv": "8c60ed8659ed97f36e0491daf96b6bd14b5cbcede8ecca00bc1a5c8cbdad3bc3",
+    "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_evaluation_v1/final_evaluation_summary.json": "51aa9a07a54c2552269d92ed16b8b11c4d2a3d2b66e1e8fe7cc31ae6b070af8e"
+  },
+  "script_sha256": "d8865ccde5cf49b678974e8dfbef110ec43f0b2a52034d7f808ea8a1faec332a"
+}

@@ -1,0 +1,9 @@
+path: ${PROJECT_ROOT}/CAUCAFall_YOLO
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: non_fall
+  1: fall

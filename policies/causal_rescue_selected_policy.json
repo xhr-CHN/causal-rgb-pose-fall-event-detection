@@ -1,0 +1,39 @@
+{
+  "policy_name": "causal_rescue_alarm_policy_v2",
+  "base_candidate_policy": {
+    "resampled_fps": 20.0,
+    "window_length": 16,
+    "fall_score": "P(Falling) + P(Fallen)",
+    "evidence_alpha": 0.5,
+    "evidence_alarm_threshold": 0.85,
+    "consecutive_evidence_frames": 2,
+    "reset_threshold": 0.1,
+    "reset_frames": 5
+  },
+  "primary_verifier": {
+    "model_path": "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/alarm_verifier_v2_model.json",
+    "model_sha256": "f63661d59b5731355c81eec8c3c2f3f79fa9c1f1f7f214a0a6c833398d6ae11c",
+    "score": "standardized L2 logistic probability",
+    "threshold": 0.3179642728137935,
+    "feature_configuration": "pre_plus_confirmation_v2"
+  },
+  "causal_rescue_path": {
+    "applies_only_when_primary_rejected": true,
+    "all_conditions_required": {
+      "pre_pose_fall_score_slope_minimum": 0.05,
+      "confirm_prob_falling_delta_minimum": 0.0
+    },
+    "interpretation": "rapid pre-candidate rise in Pose fall evidence followed by non-decreasing fused Falling probability during confirmation"
+  },
+  "timing": {
+    "confirmation_future_samples": 4,
+    "maximum_added_delay_ms": 200.0,
+    "post_decision_samples_used": 0
+  },
+  "development_datasets": [
+    "URFD Camera 0 RGB",
+    "Le2i revealed V1 test"
+  ],
+  "untouched_final_blind_dataset": "GMDCSA24 v2.1",
+  "gmdcsa24_read": false
+}

@@ -1,0 +1,27 @@
+{
+  "status": "post_hoc_descriptive_failure_review",
+  "created_utc": "2026-07-17T15:19:16.651282+00:00",
+  "model_inference_performed": false,
+  "threshold_or_policy_changed": false,
+  "final_stage": "final_causal_rescue",
+  "miss_clip_count": 19,
+  "false_alarm_clip_count": 14,
+  "total_clip_count": 33,
+  "miss_stage_counts": {
+    "base_no_candidate": 6,
+    "verifier_rejected_not_rescued": 13
+  },
+  "false_alarm_classification_counts": {
+    "false_alarm_adl": 12,
+    "false_alarm_pre_onset": 2
+  },
+  "clip_window_seconds": {
+    "before_focus": 2.0,
+    "after_focus": 3.0
+  },
+  "video_encoder": "libx264",
+  "evaluation_complete_lock_sha256": "aa683b0eea0deff6d2e03dcf4f27fde6c245357673c499ddaca033e08e002bc3",
+  "event_results_sha256": "8c60ed8659ed97f36e0491daf96b6bd14b5cbcede8ecca00bc1a5c8cbdad3bc3",
+  "alarm_classification_sha256": "2e7c83db41808afda923f1361e2fd03cd1c1a609180c22352caac60f6eb6eddc",
+  "annotation_audit_sha256": "869eed27a8207ee4b0ed1f8faf888592e68d93997a8747c3fcf0669ca6b24387"
+}

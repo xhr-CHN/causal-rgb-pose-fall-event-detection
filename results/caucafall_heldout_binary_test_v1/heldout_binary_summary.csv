@@ -1,0 +1,2 @@
+threshold,samples,positive_samples,negative_samples,tp,fp,tn,fn,accuracy,positive_precision,positive_recall_sensitivity,specificity,positive_f1,negative_f1,binary_macro_f1,balanced_accuracy,auroc,positive_auprc_average_precision,negative_auprc_average_precision,binary_macro_auprc
+0.623,3958,1302,2656,1244,32,2624,58,0.9772612430520465,0.9749216300940439,0.9554531490015361,0.9879518072289156,0.965089216446858,0.9831397527163732,0.9741144845816156,0.9717024781152259,0.9979584235559751,0.9955119073301739,0.9990690274448741,0.997290467387524

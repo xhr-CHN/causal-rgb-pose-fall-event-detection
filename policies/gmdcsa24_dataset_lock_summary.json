@@ -1,0 +1,34 @@
+{
+  "protocol": {
+    "dataset": "GMDCSA24 v2.1",
+    "role": "frozen final blind test for next method version",
+    "model_inference_performed": false,
+    "labels_used_for_training_or_threshold_selection": false,
+    "inference_input": "${PROJECT_ROOT}/GMDCSA24_FROZEN_INPUT_V1",
+    "private_mapping": "${PROJECT_ROOT}/experiments/gmdcsa24_final_blind_lock_v1/PRIVATE_EVALUATION_MAPPING_DO_NOT_USE_FOR_INFERENCE.csv"
+  },
+  "created_utc": "2026-07-17T12:50:29.714099+00:00",
+  "raw_manifest": "${PROJECT_ROOT}/gmdcsa24_raw_sha256.txt",
+  "raw_manifest_sha256": "2a78dd9bf063f37a06cf46990a92598c9ef248fd422e0d542c1be1203de6bc1d",
+  "raw_manifest_entries": 170,
+  "verified_raw_files": 170,
+  "video_count": 160,
+  "csv_count": 8,
+  "subject_count": 4,
+  "private_category_counts": {
+    "ADL": 81,
+    "Fall": 79
+  },
+  "private_subject_counts": {
+    "Subject 1": 32,
+    "Subject 2": 48,
+    "Subject 3": 43,
+    "Subject 4": 37
+  },
+  "blind_input_contains_category_or_subject_columns": false,
+  "link_method_counts": {
+    "hardlink": 160
+  },
+  "preparation_script_sha256": "5f6c61fb44fe7e71733607ef42ecd7615ca49ba133845daf99d480acc89269fd",
+  "locked_protocol_sha256": "17594cce772d299a4755aaca48168b95578cfa77a0e57d6fc88277478b413f41"
+}

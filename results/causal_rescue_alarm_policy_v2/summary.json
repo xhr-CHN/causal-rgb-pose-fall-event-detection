@@ -1,0 +1,184 @@
+{
+  "protocol": {
+    "selection_role": "development-only fixed causal rescue policy",
+    "development_datasets": [
+      "URFD Camera 0 RGB",
+      "Le2i revealed V1 test"
+    ],
+    "untouched_final_blind_dataset": "GMDCSA24 v2.1",
+    "gmdcsa24_read": false,
+    "maximum_added_delay_ms": 200.0,
+    "post_decision_samples_used": 0
+  },
+  "created_utc": "2026-07-17T13:29:12.027912+00:00",
+  "primary_threshold": 0.3179642728137935,
+  "rescue_rule": {
+    "applies_only_when_primary_rejected": true,
+    "all_conditions_required": {
+      "pre_pose_fall_score_slope_minimum": 0.05,
+      "confirm_prob_falling_delta_minimum": 0.0
+    },
+    "interpretation": "rapid pre-candidate rise in Pose fall evidence followed by non-decreasing fused Falling probability during confirmation"
+  },
+  "primary_only_oof": {
+    "by_dataset": {
+      "URFD": {
+        "total_fall_events": 30,
+        "base_detected_events": 28,
+        "retained_detected_events": 28,
+        "rejected_detected_events": 0,
+        "base_event_recall": 0.9333333333333333,
+        "retained_event_recall": 0.9333333333333333,
+        "base_detected_event_retention": 1.0,
+        "base_false_alarms": 26,
+        "retained_false_alarms": 9,
+        "rejected_false_alarms": 17,
+        "false_alarm_reduction_fraction": 0.6538461538461539,
+        "base_false_alarms_per_hour": 323.20441988950273,
+        "retained_false_alarms_per_hour": 111.87845303867401,
+        "base_duplicate_alarms": 0,
+        "retained_duplicate_alarms": 0,
+        "accepted_alarm_precision_excluding_duplicates": 0.7567567567567568
+      },
+      "Le2i": {
+        "total_fall_events": 99,
+        "base_detected_events": 94,
+        "retained_detected_events": 88,
+        "rejected_detected_events": 6,
+        "base_event_recall": 0.9494949494949495,
+        "retained_event_recall": 0.8888888888888888,
+        "base_detected_event_retention": 0.9361702127659575,
+        "base_false_alarms": 131,
+        "retained_false_alarms": 41,
+        "rejected_false_alarms": 90,
+        "false_alarm_reduction_fraction": 0.6870229007633588,
+        "base_false_alarms_per_hour": 178.06410996805675,
+        "retained_false_alarms_per_hour": 55.7299886159567,
+        "base_duplicate_alarms": 2,
+        "retained_duplicate_alarms": 2,
+        "accepted_alarm_precision_excluding_duplicates": 0.6821705426356589
+      }
+    },
+    "macro_false_alarm_reduction_fraction": 0.6704345273047563,
+    "total_retained_detected_events": 116,
+    "total_retained_false_alarms": 50
+  },
+  "causal_rescue_oof": {
+    "by_dataset": {
+      "URFD": {
+        "total_fall_events": 30,
+        "base_detected_events": 28,
+        "retained_detected_events": 28,
+        "rejected_detected_events": 0,
+        "base_event_recall": 0.9333333333333333,
+        "retained_event_recall": 0.9333333333333333,
+        "base_detected_event_retention": 1.0,
+        "base_false_alarms": 26,
+        "retained_false_alarms": 9,
+        "rejected_false_alarms": 17,
+        "false_alarm_reduction_fraction": 0.6538461538461539,
+        "base_false_alarms_per_hour": 323.20441988950273,
+        "retained_false_alarms_per_hour": 111.87845303867401,
+        "base_duplicate_alarms": 0,
+        "retained_duplicate_alarms": 0,
+        "accepted_alarm_precision_excluding_duplicates": 0.7567567567567568
+      },
+      "Le2i": {
+        "total_fall_events": 99,
+        "base_detected_events": 94,
+        "retained_detected_events": 93,
+        "rejected_detected_events": 1,
+        "base_event_recall": 0.9494949494949495,
+        "retained_event_recall": 0.9393939393939394,
+        "base_detected_event_retention": 0.9893617021276596,
+        "base_false_alarms": 131,
+        "retained_false_alarms": 44,
+        "rejected_false_alarms": 87,
+        "false_alarm_reduction_fraction": 0.6641221374045801,
+        "base_false_alarms_per_hour": 178.06410996805675,
+        "retained_false_alarms_per_hour": 59.8077926610267,
+        "base_duplicate_alarms": 2,
+        "retained_duplicate_alarms": 2,
+        "accepted_alarm_precision_excluding_duplicates": 0.6788321167883211
+      }
+    },
+    "macro_false_alarm_reduction_fraction": 0.658984145625367,
+    "total_retained_detected_events": 121,
+    "total_retained_false_alarms": 53
+  },
+  "rescue_effect": {
+    "rescued_candidates": 8,
+    "rescued_true_events": 5,
+    "rescued_false_alarms": 3,
+    "rescued_duplicates": 0,
+    "by_dataset": {
+      "Le2i": 8
+    }
+  },
+  "comparison_to_low_threshold_policy": {
+    "low_threshold": 0.0873212827559896,
+    "low_threshold_metrics": {
+      "by_dataset": {
+        "URFD": {
+          "base_detected_events": 28,
+          "required_retained_events": 28,
+          "retained_detected_events": 28,
+          "rejected_detected_events": 0,
+          "base_event_recall": 0.9333333333333333,
+          "retained_event_recall": 0.9333333333333333,
+          "base_event_retention": 1.0,
+          "constraint_satisfied": true,
+          "base_false_alarms": 26,
+          "retained_false_alarms": 18,
+          "rejected_false_alarms": 8,
+          "false_alarm_reduction_fraction": 0.3076923076923077,
+          "base_false_alarms_per_hour": 323.20441988950273,
+          "retained_false_alarms_per_hour": 223.75690607734802,
+          "base_duplicate_alarms": 0,
+          "retained_duplicate_alarms": 0,
+          "confirmation_added_delay_ms_mean": 178.57142857142858,
+          "confirmation_added_delay_ms_max": 200.0
+        },
+        "Le2i": {
+          "base_detected_events": 94,
+          "required_retained_events": 93,
+          "retained_detected_events": 93,
+          "rejected_detected_events": 1,
+          "base_event_recall": 0.9494949494949495,
+          "retained_event_recall": 0.9393939393939394,
+          "base_event_retention": 0.9893617021276596,
+          "constraint_satisfied": true,
+          "base_false_alarms": 131,
+          "retained_false_alarms": 79,
+          "rejected_false_alarms": 52,
+          "false_alarm_reduction_fraction": 0.3969465648854962,
+          "base_false_alarms_per_hour": 178.06410996805675,
+          "retained_false_alarms_per_hour": 107.38217318684339,
+          "base_duplicate_alarms": 2,
+          "retained_duplicate_alarms": 2,
+          "confirmation_added_delay_ms_mean": 200.0,
+          "confirmation_added_delay_ms_max": 200.0
+        }
+      },
+      "all_retention_constraints_satisfied": true,
+      "macro_false_alarm_retention_fraction": 0.6476805637110981,
+      "macro_false_alarm_reduction_fraction": 0.35231943628890194,
+      "total_retained_true_events": 121,
+      "total_retained_false_alarms": 97,
+      "threshold_margin": 0.0034483208026050427
+    },
+    "interpretation": "fixed rescue restores the same 121/122 detected events with substantially fewer false alarms than global threshold lowering"
+  },
+  "selected_policy": "${PROJECT_ROOT}/experiments/causal_rescue_alarm_policy_v2/selected_policy.json",
+  "selected_policy_sha256": "0865b34814e0481ec0ba7b7894cf6493b9b4681279910e24b1f61239e7fd4de5",
+  "verifier_model": "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/alarm_verifier_v2_model.json",
+  "verifier_model_sha256": "f63661d59b5731355c81eec8c3c2f3f79fa9c1f1f7f214a0a6c833398d6ae11c",
+  "input_sha256": {
+    "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/summary.json": "ecfe99f361cfe4ab0e9950c19b1eb77858013c5209fcb607d18fe3dfc7413a06",
+    "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/oof_predictions.csv": "2dc01228fa521194e613622e85c3d886b88143ce84d06ce526eef653cb7b6970",
+    "${PROJECT_ROOT}/experiments/multidataset_alarm_verifier_v2_seed42/alarm_verifier_v2_model.json": "f63661d59b5731355c81eec8c3c2f3f79fa9c1f1f7f214a0a6c833398d6ae11c",
+    "${PROJECT_ROOT}/features/multidataset_alarm_confirmation_features_v2/alarm_confirmation_features.csv": "c2d85aca74558d3eaea383fcfecbe341ab9823d208de89132b2103321fe69935",
+    "${PROJECT_ROOT}/experiments/event_preserving_alarm_policy_v2/summary.json": "65056545827c7c4495cfeb0fafe90f2a9a11cb61819ba384c9a5af1e66c5b0b0"
+  },
+  "script_sha256": "be094428f908f8d5496026cc6fba8b1664fe1613b1eb8ca534e6b0d8eefa4741"
+}

@@ -1,0 +1,281 @@
+{
+  "protocol": {
+    "dataset": "Le2i",
+    "role": "single frozen final blind evaluation after label reveal",
+    "created_utc": "2026-07-17T11:46:35.355610+00:00",
+    "model_training_dataset": "CAUCAFall",
+    "development_dataset": "URFD Camera 0 RGB",
+    "target_labels_used_for_training_or_selection": false,
+    "target_labels_revealed_only_after_inference_outputs_were_hashed": true,
+    "model_policy_or_threshold_changed_after_label_reveal": false,
+    "event_detection_rule": "one detection at or after official onset; later alarms in the same fall sequence are duplicate alarms",
+    "negative_exposure_rule": "all ADL-only video frames plus pre-onset frames of fall videos; post-onset frames excluded from false-alarm exposure",
+    "negative_exposure_hours": 0.7356900838888888,
+    "bootstrap_unit": "complete video sequence"
+  },
+  "frozen_inference_artifact_hashes": {
+    "frame_predictions": "667d0ffa084c542015d3ae567bee94df64e068615517d250703afb4772247296",
+    "candidate_alarms": "e86580bcc3baf768db3209ff93f7e795c1cd55b9dbf7235997d6a2f29eeb44e0",
+    "final_alarms": "322e5f435381bf818003e0dc739858721a6008ba18616343a18cdedbf9a80a8b",
+    "resampling_summary": "a4331f7446fa3ebfce58221187c5cd4c5368adc1054f3bbc8b9b33feddc596e2",
+    "inference_summary": "7642d2d80d13049bd2c7da51e220f38c571e33f39900da196defe0674b8f6b27",
+    "inference_script": "875eb5da6c30b4c3d7eb39c42cd68c0e4e09a4c56b84ff956003fc6856adbf23"
+  },
+  "dataset": {
+    "sequences": 190,
+    "fall_events": 99,
+    "adl_sequences": 91,
+    "raw_frames": 75911,
+    "causal_window_endpoints": 58328
+  },
+  "frame_level_fusion_model": {
+    "evaluation_unit": "20-FPS causal-window endpoint",
+    "positive_definition": "official Le2i onset-through-end interval, inclusive",
+    "prediction_definition": "argmax state is Falling or Fallen",
+    "samples": 58328,
+    "positive_samples": 1916,
+    "negative_samples": 56412,
+    "tp": 860,
+    "fp": 12470,
+    "tn": 43942,
+    "fn": 1056,
+    "accuracy": 0.7681045124125634,
+    "precision": 0.06451612903225806,
+    "recall_sensitivity": 0.4488517745302714,
+    "specificity": 0.7789477416152591,
+    "f1": 0.11281647645284008,
+    "balanced_accuracy": 0.6138997580727653,
+    "auroc": 0.6769237372983761,
+    "auprc_average_precision": 0.05592895448523314,
+    "brier_score": 0.21866452014679674,
+    "ece_10_bins": 0.22479203152804905
+  },
+  "event_level_before_verifier": {
+    "total_fall_events": 99,
+    "detected_fall_events": 94,
+    "missed_fall_events": 5,
+    "event_recall": 0.9494949494949495,
+    "total_alarm_count": 227,
+    "false_alarm_count": 131,
+    "sequences_with_false_alarm": 85,
+    "negative_exposure_hours": 0.7356900838888889,
+    "false_alarms_per_hour": 178.06410996805673,
+    "duplicate_alarms_after_onset": 2,
+    "mean_detection_delay_ms": 769.9497872340426,
+    "median_detection_delay_ms": 800.0,
+    "p95_detection_delay_ms": 1081.3166999999999,
+    "minimum_detection_delay_ms": 280.0,
+    "maximum_detection_delay_ms": 1583.7480000000005,
+    "event_recall_wilson_95ci": [
+      0.8871729731375114,
+      0.9782367655085832
+    ],
+    "bootstrap_95ci": {
+      "method": "sequence-level percentile bootstrap",
+      "replicates": 2000,
+      "seed": 20260717,
+      "event_recall_95ci": [
+        0.9021685848252344,
+        0.9893617021276596
+      ],
+      "false_alarms_per_hour_95ci": [
+        150.09500360590107,
+        207.54685527562964
+      ],
+      "median_detection_delay_ms_95ci": [
+        719.859875,
+        840.0
+      ]
+    }
+  },
+  "event_level_after_verifier": {
+    "total_fall_events": 99,
+    "detected_fall_events": 81,
+    "missed_fall_events": 18,
+    "event_recall": 0.8181818181818182,
+    "total_alarm_count": 113,
+    "false_alarm_count": 31,
+    "sequences_with_false_alarm": 28,
+    "negative_exposure_hours": 0.7356900838888889,
+    "false_alarms_per_hour": 42.13730846572335,
+    "duplicate_alarms_after_onset": 1,
+    "mean_detection_delay_ms": 818.4927901234568,
+    "median_detection_delay_ms": 800.0,
+    "p95_detection_delay_ms": 1080.0,
+    "minimum_detection_delay_ms": 360.0,
+    "maximum_detection_delay_ms": 6499.416,
+    "event_recall_wilson_95ci": [
+      0.730812057244057,
+      0.8817813532582349
+    ],
+    "bootstrap_95ci": {
+      "method": "sequence-level percentile bootstrap",
+      "replicates": 2000,
+      "seed": 20260718,
+      "event_recall_95ci": [
+        0.74,
+        0.8910891089108911
+      ],
+      "false_alarms_per_hour_95ci": [
+        28.090205506191307,
+        58.54415271101896
+      ],
+      "median_detection_delay_ms_95ci": [
+        708.7640000000001,
+        840.0
+      ]
+    }
+  },
+  "verifier_effect": {
+    "candidate_alarms_before_verifier": 227,
+    "alarms_retained_after_verifier": 113,
+    "alarms_rejected_by_verifier": 114,
+    "alarm_rejection_fraction": 0.5022026431718062,
+    "false_alarm_reduction_fraction": 0.7633587786259541,
+    "event_recall_change": -0.13131313131313127,
+    "false_alarms_per_hour_change": -135.92680150233338,
+    "paired_event_detection": {
+      "both_detected": 81,
+      "pre_only_detected": 13,
+      "post_only_detected": 0,
+      "neither_detected": 5
+    }
+  },
+  "scene_level_before_verifier": [
+    {
+      "scene": "Coffee_room_01",
+      "sequences": 48,
+      "fall_events": 48,
+      "detected_events": 46,
+      "event_recall": 0.9583333333333334,
+      "false_alarm_count": 4,
+      "negative_exposure_hours": 0.10375555555555557,
+      "false_alarms_per_hour": 38.55215249518098,
+      "median_detection_delay_ms": 800.0
+    },
+    {
+      "scene": "Coffee_room_02",
+      "sequences": 22,
+      "fall_events": 14,
+      "detected_events": 14,
+      "event_recall": 1.0,
+      "false_alarm_count": 14,
+      "negative_exposure_hours": 0.12802222222222223,
+      "false_alarms_per_hour": 109.35601458080194,
+      "median_detection_delay_ms": 920.0
+    },
+    {
+      "scene": "Home_01",
+      "sequences": 30,
+      "fall_events": 30,
+      "detected_events": 29,
+      "event_recall": 0.9666666666666667,
+      "false_alarm_count": 16,
+      "negative_exposure_hours": 0.05041586,
+      "false_alarms_per_hour": 317.36044966802115,
+      "median_detection_delay_ms": 667.1019999999999
+    },
+    {
+      "scene": "Home_02",
+      "sequences": 30,
+      "fall_events": 7,
+      "detected_events": 5,
+      "event_recall": 0.7142857142857143,
+      "false_alarm_count": 5,
+      "negative_exposure_hours": 0.07744089055555557,
+      "false_alarms_per_hour": 64.56537320439301,
+      "median_detection_delay_ms": 874.7520000000004
+    },
+    {
+      "scene": "Lecture_room",
+      "sequences": 27,
+      "fall_events": 0,
+      "detected_events": 0,
+      "event_recall": null,
+      "false_alarm_count": 53,
+      "negative_exposure_hours": 0.19214444444444445,
+      "false_alarms_per_hour": 275.83415254727345,
+      "median_detection_delay_ms": null
+    },
+    {
+      "scene": "Office",
+      "sequences": 33,
+      "fall_events": 0,
+      "detected_events": 0,
+      "event_recall": null,
+      "false_alarm_count": 39,
+      "negative_exposure_hours": 0.18391111111111114,
+      "false_alarms_per_hour": 212.05896568390523,
+      "median_detection_delay_ms": null
+    }
+  ],
+  "scene_level_after_verifier": [
+    {
+      "scene": "Coffee_room_01",
+      "sequences": 48,
+      "fall_events": 48,
+      "detected_events": 43,
+      "event_recall": 0.8958333333333334,
+      "false_alarm_count": 0,
+      "negative_exposure_hours": 0.10375555555555557,
+      "false_alarms_per_hour": 0.0,
+      "median_detection_delay_ms": 800.0
+    },
+    {
+      "scene": "Coffee_room_02",
+      "sequences": 22,
+      "fall_events": 14,
+      "detected_events": 11,
+      "event_recall": 0.7857142857142857,
+      "false_alarm_count": 0,
+      "negative_exposure_hours": 0.12802222222222223,
+      "false_alarms_per_hour": 0.0,
+      "median_detection_delay_ms": 960.0
+    },
+    {
+      "scene": "Home_01",
+      "sequences": 30,
+      "fall_events": 30,
+      "detected_events": 25,
+      "event_recall": 0.8333333333333334,
+      "false_alarm_count": 0,
+      "negative_exposure_hours": 0.05041586,
+      "false_alarms_per_hour": 0.0,
+      "median_detection_delay_ms": 667.1000000000004
+    },
+    {
+      "scene": "Home_02",
+      "sequences": 30,
+      "fall_events": 7,
+      "detected_events": 2,
+      "event_recall": 0.2857142857142857,
+      "false_alarm_count": 0,
+      "negative_exposure_hours": 0.07744089055555557,
+      "false_alarms_per_hour": 0.0,
+      "median_detection_delay_ms": 874.7380000000003
+    },
+    {
+      "scene": "Lecture_room",
+      "sequences": 27,
+      "fall_events": 0,
+      "detected_events": 0,
+      "event_recall": null,
+      "false_alarm_count": 17,
+      "negative_exposure_hours": 0.19214444444444445,
+      "false_alarms_per_hour": 88.4751055340311,
+      "median_detection_delay_ms": null
+    },
+    {
+      "scene": "Office",
+      "sequences": 33,
+      "fall_events": 0,
+      "detected_events": 0,
+      "event_recall": null,
+      "false_alarm_count": 14,
+      "negative_exposure_hours": 0.18391111111111114,
+      "false_alarms_per_hour": 76.12373127114547,
+      "median_detection_delay_ms": null
+    }
+  ],
+  "important_interpretation": "Le2i was used once as the untouched final test set. These results must not be used to retune the model, evidence policy, or verifier."
+}

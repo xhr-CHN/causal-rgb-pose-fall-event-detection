@@ -1,0 +1,222 @@
+{
+  "protocol": {
+    "model": "kinematic-v2 three-state causal Pose-TCN",
+    "states": [
+      "ADL",
+      "Falling",
+      "Fallen"
+    ],
+    "seed": 42,
+    "train_subjects": [
+      1,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "val_subjects": [
+      4,
+      5
+    ],
+    "test_used": false,
+    "external_data_used": false,
+    "early_stopping_metric": "validation macro one-vs-rest AUPRC",
+    "standardization": "source-train statistics only",
+    "window_length": 32,
+    "input_features": 95,
+    "state_machine": {
+      "falling_required": 2,
+      "falling_lookback_frames": 20,
+      "arm_memory_frames": 30,
+      "fallen_consecutive_frames": 5,
+      "adl_reset_frames": 10
+    }
+  },
+  "feature_design": {
+    "name": "bbox-scale-normalized-global-kinematics-v2",
+    "description": "Camera/framing-dependent bbox channels replaced by aspect ratio and bbox-scale-normalized translation/scale changes",
+    "feature_names": [
+      "pose_found",
+      "person_conf",
+      "visible_keypoint_ratio",
+      "mean_keypoint_conf",
+      "torso_keypoint_conf",
+      "nose_x_bbox",
+      "nose_y_bbox",
+      "nose_conf",
+      "left_eye_x_bbox",
+      "left_eye_y_bbox",
+      "left_eye_conf",
+      "right_eye_x_bbox",
+      "right_eye_y_bbox",
+      "right_eye_conf",
+      "left_ear_x_bbox",
+      "left_ear_y_bbox",
+      "left_ear_conf",
+      "right_ear_x_bbox",
+      "right_ear_y_bbox",
+      "right_ear_conf",
+      "left_shoulder_x_bbox",
+      "left_shoulder_y_bbox",
+      "left_shoulder_conf",
+      "right_shoulder_x_bbox",
+      "right_shoulder_y_bbox",
+      "right_shoulder_conf",
+      "left_elbow_x_bbox",
+      "left_elbow_y_bbox",
+      "left_elbow_conf",
+      "right_elbow_x_bbox",
+      "right_elbow_y_bbox",
+      "right_elbow_conf",
+      "left_wrist_x_bbox",
+      "left_wrist_y_bbox",
+      "left_wrist_conf",
+      "right_wrist_x_bbox",
+      "right_wrist_y_bbox",
+      "right_wrist_conf",
+      "left_hip_x_bbox",
+      "left_hip_y_bbox",
+      "left_hip_conf",
+      "right_hip_x_bbox",
+      "right_hip_y_bbox",
+      "right_hip_conf",
+      "left_knee_x_bbox",
+      "left_knee_y_bbox",
+      "left_knee_conf",
+      "right_knee_x_bbox",
+      "right_knee_y_bbox",
+      "right_knee_conf",
+      "left_ankle_x_bbox",
+      "left_ankle_y_bbox",
+      "left_ankle_conf",
+      "right_ankle_x_bbox",
+      "right_ankle_y_bbox",
+      "right_ankle_conf",
+      "delta_nose_x_bbox",
+      "delta_nose_y_bbox",
+      "delta_left_eye_x_bbox",
+      "delta_left_eye_y_bbox",
+      "delta_right_eye_x_bbox",
+      "delta_right_eye_y_bbox",
+      "delta_left_ear_x_bbox",
+      "delta_left_ear_y_bbox",
+      "delta_right_ear_x_bbox",
+      "delta_right_ear_y_bbox",
+      "delta_left_shoulder_x_bbox",
+      "delta_left_shoulder_y_bbox",
+      "delta_right_shoulder_x_bbox",
+      "delta_right_shoulder_y_bbox",
+      "delta_left_elbow_x_bbox",
+      "delta_left_elbow_y_bbox",
+      "delta_right_elbow_x_bbox",
+      "delta_right_elbow_y_bbox",
+      "delta_left_wrist_x_bbox",
+      "delta_left_wrist_y_bbox",
+      "delta_right_wrist_x_bbox",
+      "delta_right_wrist_y_bbox",
+      "delta_left_hip_x_bbox",
+      "delta_left_hip_y_bbox",
+      "delta_right_hip_x_bbox",
+      "delta_right_hip_y_bbox",
+      "delta_left_knee_x_bbox",
+      "delta_left_knee_y_bbox",
+      "delta_right_knee_x_bbox",
+      "delta_right_knee_y_bbox",
+      "delta_left_ankle_x_bbox",
+      "delta_left_ankle_y_bbox",
+      "delta_right_ankle_x_bbox",
+      "delta_right_ankle_y_bbox",
+      "bbox_aspect_ratio",
+      "delta_bbox_cx_over_w",
+      "delta_bbox_cy_over_h",
+      "delta_bbox_w_over_w",
+      "delta_bbox_h_over_h"
+    ]
+  },
+  "environment": {
+    "python": "3.9.25",
+    "torch": "2.1.0+cu121",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "model_parameters": 145219,
+  "class_counts": [
+    1605,
+    203,
+    705
+  ],
+  "class_weights": [
+    0.5219106957424714,
+    4.126436781609195,
+    1.188179669030733
+  ],
+  "best_epoch": 27,
+  "best_validation_macro_auprc": 0.8818685207728322,
+  "validation_frame_metrics": {
+    "accuracy": 0.9168115942028986,
+    "macro_f1": 0.824177638358402,
+    "weighted_f1": 0.910592306117452,
+    "balanced_accuracy": 0.7900570731705502,
+    "macro_auprc_ovr": 0.8818685207728322,
+    "macro_auroc_ovr": 0.9687607769709242,
+    "confusion_matrix": [
+      [
+        2051,
+        6,
+        0
+      ],
+      [
+        58,
+        145,
+        91
+      ],
+      [
+        106,
+        26,
+        967
+      ]
+    ],
+    "per_class": {
+      "ADL": {
+        "support": 2057,
+        "precision": 0.9259593679458239,
+        "recall": 0.9970831307729704,
+        "f1": 0.9602059925093632,
+        "auroc_ovr": 0.9961982633495277,
+        "auprc_ovr": 0.9965773421415276
+      },
+      "Falling": {
+        "support": 294,
+        "precision": 0.8192090395480226,
+        "recall": 0.4931972789115646,
+        "f1": 0.6157112526539278,
+        "auroc_ovr": 0.9267985394411251,
+        "auprc_ovr": 0.6953883421217829
+      },
+      "Fallen": {
+        "support": 1099,
+        "precision": 0.9139886578449905,
+        "recall": 0.8798908098271155,
+        "f1": 0.8966156699119148,
+        "auroc_ovr": 0.9832855281221202,
+        "auprc_ovr": 0.9536398780551857
+      }
+    },
+    "loss": 0.7015509684617593
+  },
+  "validation_event_metrics": {
+    "fall_events": 10,
+    "detected_events": 9,
+    "missed_events": 1,
+    "event_recall": 0.9,
+    "false_alarm_count": 0,
+    "negative_exposure_hours": 0.028569444444444442,
+    "false_alarms_per_hour": 0.0,
+    "duplicate_alarms_after_onset": 0,
+    "mean_delay_frames": 28.444444444444443,
+    "median_delay_frames": 26.0,
+    "mean_delay_seconds": 1.422222222222222,
+    "median_delay_seconds": 1.3
+  }
+}

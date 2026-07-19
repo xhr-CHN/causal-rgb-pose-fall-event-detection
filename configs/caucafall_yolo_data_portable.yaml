@@ -1,0 +1,10 @@
+# Portable template. Resolve this path for the local installation.
+path: ../data/CAUCAFall_YOLO
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: non_fall
+  1: fall
