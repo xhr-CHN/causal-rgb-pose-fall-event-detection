@@ -2,9 +2,12 @@
 
 ## Repository license
 
-Unless a file states otherwise, the source code and included checkpoints in
-this release are distributed under GNU Affero General Public License v3.0 only
-(`AGPL-3.0-only`). See `LICENSE`.
+Source code authored for this repository is distributed under GNU Affero
+General Public License v3.0 only (`AGPL-3.0-only`). Dataset-derived annotations,
+result summaries, checkpoints, and other derived artifacts are provided for
+scientific reproducibility and remain subject to any applicable terms of the
+source datasets described in `DATASETS.md`. See `LICENSE` for the repository
+source-code license.
 
 Copyright (C) 2026 Haoran Xiao, Zehao Li, and Peishun Liu.
 

@@ -12,8 +12,8 @@ result summaries; and selected final checkpoints.
 
 The work evaluates a causal RGB-pose temporal framework at both frame and
 event level. The external fusion ablation is included in full: quality-gated
-fusion produced only marginal, dataset-dependent differences from fixed
-late-logit fusion and is not claimed to be uniformly superior.
+fusion produced only marginal, dataset-dependent differences from fixed late-
+logit fusion and is not claimed to be uniformly superior.
 
 Key frozen evaluations are:
 
@@ -83,10 +83,15 @@ The exact package snapshot is also retained in `environment/pip_freeze.txt`.
 
 ## License
 
-The repository code and included checkpoints are released under the GNU Affero
-General Public License v3.0 only (`AGPL-3.0-only`); see `LICENSE`. This choice
-preserves compatibility with the Ultralytics AGPL-3.0 components used by the
-pipeline. Dataset licenses remain with their original providers, and users
-must independently comply with all attribution and non-commercial conditions.
+Source code authored for this repository is released under the GNU Affero
+General Public License v3.0 only (`AGPL-3.0-only`); see `LICENSE`.
+Dataset-derived annotations, result summaries, checkpoints, and other derived
+artifacts are provided for scientific reproducibility and remain subject to
+any applicable terms of the original datasets described in `DATASETS.md`.
+
+This licensing choice preserves compatibility with the Ultralytics AGPL-3.0
+components used by the pipeline. Dataset licenses remain with their original
+providers, and users must independently comply with all applicable attribution,
+non-commercial, share-alike, privacy, and other provider-specific conditions.
 See `DATASETS.md` and `THIRD_PARTY_NOTICES.md`.
 
