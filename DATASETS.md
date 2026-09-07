@@ -21,8 +21,8 @@ dataset from its official source and review the current terms before use.
 - Stated terms: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
   International, for non-commercial academic use.
 - Citation: B. Kwolek and M. Kępski, “Human fall detection on embedded
-  platform using depth maps and wireless accelerometer,” *Computer Methods
-  and Programs in Biomedicine*, 117(3), 489–501, 2014.
+  platform using depth maps and wireless accelerometer,” *Computer Methods and
+  Programs in Biomedicine*, 117(3), 489–501, 2014.
 - This release includes a manual event-boundary annotation table and compact
   result summaries, but no URFD media.
 
