@@ -12,8 +12,8 @@ result summaries; and selected final checkpoints.
 
 The work evaluates a causal RGB-pose temporal framework at both frame and
 event level. The external fusion ablation is included in full: quality-gated
-fusion produced only marginal, dataset-dependent differences from fixed late-
-logit fusion and is not claimed to be uniformly superior.
+fusion produced only marginal, dataset-dependent differences from fixed
+late-logit fusion and is not claimed to be uniformly superior.
 
 Key frozen evaluations are:
 
