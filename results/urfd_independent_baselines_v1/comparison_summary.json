@@ -1,0 +1,40 @@
+{
+  "dataset": "URFD Camera 0 RGB",
+  "source_training_dataset": "CAUCAFall",
+  "fine_tuning": false,
+  "common_negative_exposure_hours": 0.1352313888888889,
+  "exposure_definition": "Complete 20-Hz sequence durations plus pre-onset portions of fall sequences",
+  "comparison": [
+    {
+      "model": "Independent RGB-ROI TCN baseline",
+      "window_length": 32,
+      "events_detected": 10,
+      "total_events": 30,
+      "event_recall": 0.333,
+      "false_alarm_count": 5,
+      "normalized_false_alarms_per_hour": 36.97,
+      "median_detection_delay_s": 2.210
+    },
+    {
+      "model": "Independent Pose-TCN baseline",
+      "window_length": 32,
+      "events_detected": 24,
+      "total_events": 30,
+      "event_recall": 0.800,
+      "false_alarm_count": 30,
+      "normalized_false_alarms_per_hour": 221.84,
+      "median_detection_delay_s": 1.391
+    },
+    {
+      "model": "Ours quality-gated RGB-pose fusion",
+      "window_length": 16,
+      "events_detected": 28,
+      "total_events": 30,
+      "event_recall": 0.933,
+      "false_alarm_count": 26,
+      "normalized_false_alarms_per_hour": 192.26,
+      "median_detection_delay_s": 1.237
+    }
+  ],
+  "caveat": "The independent baselines and the proposed model use different frozen window lengths and decision-state implementations; this is an operating-point comparison with a common exposure denominator, not a claim of identical alarm-policy conditions."
+}

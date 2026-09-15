@@ -1,0 +1,4 @@
+model,window_length,events_detected,total_events,event_recall,false_alarm_count,negative_exposure_hours,normalized_false_alarms_per_hour,median_detection_delay_s,protocol_note
+Independent RGB-ROI TCN baseline,32,10,30,0.333,5,0.1352313888888889,36.97,2.210,CAUCAFall-trained; frozen URFD evaluation
+Independent Pose-TCN baseline,32,24,30,0.800,30,0.1352313888888889,221.84,1.391,CAUCAFall-trained; frozen URFD evaluation
+Ours quality-gated RGB-pose fusion,16,28,30,0.933,26,0.1352313888888889,192.26,1.237,CAUCAFall-trained; frozen URFD candidate policy

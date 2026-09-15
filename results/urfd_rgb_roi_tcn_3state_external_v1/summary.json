@@ -1,0 +1,24 @@
+{
+  "protocol": {
+    "source_training_dataset": "CAUCAFall",
+    "external_test_dataset": "URFD Camera 0 RGB",
+    "model": "person-ROI RGB-embedding causal TCN",
+    "fine_tuning": false,
+    "target_data_used_for_model_or_policy_selection": false,
+    "external_resampled_fps": 20.0,
+    "window_length": 32,
+    "input_features": 256
+  },
+  "event_level_locked_state_machine": {
+    "total_fall_events": 30,
+    "detected_fall_events": 10,
+    "event_recall": 0.3333333333333333,
+    "false_alarm_count": 5,
+    "negative_exposure_hours": 0.06861111111111111,
+    "false_alarms_per_hour": 72.87449392712551,
+    "duplicate_alarms_after_onset": 0,
+    "median_detection_delay_ms": 2210.0,
+    "p95_detection_delay_ms": 2374.85
+  },
+  "note": "This is an independently trained RGB-ROI TCN baseline, not a reimplementation of ESD-YOLO, FDT-YOLO, or YOLO-Fall."
+}
