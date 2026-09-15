@@ -1,6 +1,6 @@
 # Public-release audit
 
-Audit date: 2026-09-10
+Audit date: 2026-09-15
 
 ## Completed checks
 
@@ -17,6 +17,10 @@ Audit date: 2026-09-10
 - Official dataset sources and terms are documented in `DATASETS.md`.
 - AGPL-3.0-only was selected because open-source Ultralytics components were
   used and the authors held no enterprise license.
+- URFD independent RGB-ROI TCN and Pose-TCN reference summaries were added
+  without redistributing raw URFD media, cached embeddings, or frame tables.
+- The URFD comparison summary uses a common 0.135 h negative-exposure
+  denominator and documents the remaining window/policy difference.
 
 ## Finalization checks
 
@@ -26,8 +30,9 @@ Audit date: 2026-09-10
 - `FILE_MANIFEST.csv` and `SHA256SUMS.txt` were regenerated from the current
   `main` tree after the final documentation changes and verified against the
   working tree.
-- No experiment code, model, result, threshold, repository visibility, or
-  release metadata was changed during this finalization pass.
+- Existing locked experiment code, models, thresholds, and repository
+  visibility were preserved; only the documented URFD reference summaries,
+  reproduction notes, citation version, and release audit were updated.
 
 ## Preserved provenance
 
@@ -39,5 +44,5 @@ locally without changing the frozen scientific protocol.
 ## Actions after repository creation
 
 1. Add the article DOI after publication.
-2. Create an immutable tagged release and archive it in Zenodo.
+2. Archive the final release in Zenodo if required by the journal.
 3. Replace provisional manuscript wording with the final GitHub/Zenodo URL.
