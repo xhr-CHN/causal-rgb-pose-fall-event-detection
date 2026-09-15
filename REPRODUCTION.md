@@ -88,6 +88,18 @@ Run the fusion comparison with `external_fusion_ablation_urfd_le2i_v1.py`.
 The reported conclusion is the observed marginal, dataset-dependent difference
 between fixed and gated fusion, not uniform superiority of the learned gate.
 
+For the independent URFD reference table, run the frozen RGB-ROI TCN and
+Pose-TCN external evaluation scripts:
+
+- `urfd_rgb_roi_tcn_3state_external_v1.py`
+- `urfd_pose_tcn_external_v1.py`
+
+The compact comparison in `results/urfd_independent_baselines_v1/` uses a
+common 0.135 h negative-exposure denominator. It is an operating-point
+comparison because the independent baselines use 32-sample windows while the
+proposed fusion uses a 16-sample window; it is not a reimplementation of the
+published ESD-YOLO, FDT-YOLO, or YOLO-Fall systems.
+
 ## 7. Locked final blind evaluation
 
 Use `lock_gmdcsa24_final_blind_protocol_v1.py` and verify the hashes under

@@ -22,6 +22,9 @@ Key frozen evaluations are:
   source-validation-locked threshold 0.623.
 - URFD/Le2i external fusion ablation: pose-only, RGB-only, fixed 0.5, and
   quality-gated variants evaluated under the same event protocol.
+- URFD independent baseline reference: CAUCAFall-trained RGB-ROI TCN and
+  Pose-TCN results are provided in `results/urfd_independent_baselines_v1/`;
+  false alarms per hour use a common 0.135 h negative-exposure denominator.
 - One-time GMDCSA24 blind test: 60/79 fall events detected, 14 false alarms
   (53.32/h of negative exposure), and 1.25 s median detection delay for the
   final causal-rescue policy.
