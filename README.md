@@ -8,6 +8,10 @@ alarm-policy, statistical-analysis, and latency-benchmark scripts; derived
 annotations and split manifests; locked policies and protocol hashes; compact
 result summaries; and selected final checkpoints.
 
+Release v1.3.0 additionally includes the standalone Le2i baseline runner and
+evaluator, plus the frozen OOPS feature-extraction, inference, and event-level
+evaluation scripts used by the supplementary reproducibility materials.
+
 ## Scientific scope
 
 The work evaluates a causal RGB-pose temporal framework at both frame and
@@ -83,6 +87,15 @@ The exact package snapshot is also retained in `environment/pip_freeze.txt`.
    the source policy, and run frozen external evaluation.
 4. Compare regenerated metrics with `results/` and verify frozen artifacts
    against `policies/` and `SHA256SUMS.txt`.
+
+The standalone external workflows are:
+
+- `code/run_le2i_standalone_baselines_v1.py` followed by
+  `code/evaluate_le2i_standalone_baselines_v1.py` for the independent Le2i
+  reference models.
+- `code/extract_oops_frozen_features_v1.py`,
+  `code/run_oops_frozen_inference_v1.py`, and
+  `code/evaluate_oops_frozen_v1.py` for the prepared OOPS test subset.
 
 ## License
 
