@@ -1,5 +1,7 @@
 # Causal RGB-Pose Fall-Event Detection
 
+> **October 2026 revision supplement:** see [revision materials](revisions/2026-10-19/README.md) for corrected Le2i labels, verifier reassessment, statistical analyses and exploratory source-only calibrated fusion. The historical [v1.3.0 release](https://github.com/xhr-CHN/causal-rgb-pose-fall-event-detection/releases/tag/v1.3.0) remains unchanged; the manuscript's existing URL remains valid. The supplement is not a replacement blind test or a newly validated deployment model.
+
 Reproducibility materials for the manuscript **Cross-Dataset Fall-Event
 Detection via Causal RGB-Pose Temporal Modeling and Alarm Verification**.
 
@@ -19,7 +21,7 @@ event level. The external fusion ablation is included in full: quality-gated
 fusion produced only marginal, dataset-dependent differences from fixed
 late-logit fusion and is not claimed to be uniformly superior.
 
-Key frozen evaluations are:
+Historical baseline evaluations are listed below; apply the correction notes and the revision supplement for current label and exposure definitions:
 
 - CAUCAFall held-out source binary test: 3,958 frames; positive-class F1
   0.965, AUROC 0.998, and positive-class AUPRC 0.996 at the
@@ -28,7 +30,7 @@ Key frozen evaluations are:
   quality-gated variants evaluated under the same event protocol.
 - URFD independent baseline reference: CAUCAFall-trained RGB-ROI TCN and
   Pose-TCN results are provided in `results/urfd_independent_baselines_v1/`;
-  false alarms per hour use a common 0.135 h negative-exposure denominator.
+  the old v1.3.0 reference used a mixed-frame 0.135 h denominator. The revision corrects common nominal full-sequence exposure to 0.094106389 h. This remains distinct from the historical fusion-ablation endpoint exposure of 0.080444444 h; cross-convention rate comparisons are not valid.
 - One-time GMDCSA24 blind test: 60/79 fall events detected, 14 false alarms
   (53.32/h of negative exposure), and 1.25 s median detection delay for the
   final causal-rescue policy.
@@ -51,15 +53,12 @@ deployment readiness.
 - `checkpoints/`: selected compact final checkpoints.
 - `environment/`: Python, conda, package, CUDA, and GPU records.
 - `DATASETS.md`: official dataset sources, roles, and usage restrictions.
-- `VERIFIER_FEATURES.md`: complete definitions of the 18 verifier inputs.
+- `VERIFIER_FEATURES.md`: definitions of the historical 18 verifier inputs; the revision supplement separately documents the selected eight-feature pre-candidate verifier.
 - `REPRODUCTION.md`: ordered reproduction workflow.
 - `THIRD_PARTY_NOTICES.md`: software and checkpoint licensing notes.
-- `FILE_MANIFEST.csv` and `SHA256SUMS.txt`: inventory and checksums.
+- `FILE_MANIFEST.csv` and `SHA256SUMS.txt`: inventory and checksums; the two root inventory files exclude themselves to avoid self-referential checksums.
 
-Raw dataset images/videos, cached pose arrays, ROI embeddings, temporal-window
-NPZ files, and per-frame prediction tables are not redistributed. Obtain each
-dataset from its official provider and comply with its terms; see
-`DATASETS.md`.
+Raw dataset images/videos and full source feature tensors are not redistributed. The original baseline archive omits cached arrays and per-frame predictions; the separate revision supplement adds saved derived predictions and compact head-fitting records for metric reconstruction. Obtain original datasets from their providers and comply with their terms; see `DATASETS.md`.
 
 ## Quick verification
 
@@ -68,6 +67,8 @@ From the repository root:
 ```bash
 sha256sum -c SHA256SUMS.txt
 ```
+
+Checksums describe exact repository/archive bytes. On Windows, verify a GitHub source archive or a checkout with automatic line-ending conversion disabled. The revision folder has scoped Git attributes to retain its submitted source bytes; no historical tag is rewritten.
 
 Create the recorded environment with:
 
@@ -110,4 +111,3 @@ components used by the pipeline. Dataset licenses remain with their original
 providers, and users must independently comply with all applicable attribution,
 non-commercial, share-alike, privacy, and other provider-specific conditions.
 See `DATASETS.md` and `THIRD_PARTY_NOTICES.md`.
-
